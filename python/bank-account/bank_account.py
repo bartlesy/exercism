@@ -43,7 +43,7 @@ class BankAccount(object):
         if amount > self.balance:
             raise ValueError("Can't withdraw more than available balance")
         with self.lock:
-            self.balance = self.balance - amount
+            self.balance -= amount
         return
 
     @_check_open
